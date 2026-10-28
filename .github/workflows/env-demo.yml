@@ -1,7 +1,6 @@
 name: repo checks
 
 on: push
-
 env:
   APP_NAME: journey
 
@@ -10,13 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       LOG_LEVEL: INFO
-
     steps:
       - name: Display App Name
-        run: echo "$APP_NAME" && echo "$LOG_LEVEL"
-
+        run: echo $APP_NAME && echo $LOG_LEVEL
       - name: Display Log Level
         env:
           LOG_LEVEL: DEBUG
-        run: echo "$LOG_LEVEL"
-
+        run: echo $LOG_LEVEL 
