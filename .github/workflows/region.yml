@@ -1,0 +1,10 @@
+name: repo checks
+
+on: push
+
+jobs:
+  full-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display App Name
+        run: echo "Deploying to ${{ vars.DEPLOY_REGION }}"
