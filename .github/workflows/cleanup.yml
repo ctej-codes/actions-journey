@@ -1,0 +1,17 @@
+name: DB Task
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start test database
+        run: echo "Starting test database"
+
+      - name: Flaky check
+        run: ls /file-does-not-exist        
+      
+      - name: Stop test database
+        if: failure()
+        run: echo "Stopping test database"
