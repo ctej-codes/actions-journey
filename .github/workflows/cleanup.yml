@@ -13,5 +13,5 @@ jobs:
         run: ls /file-does-not-exist        
       
       - name: Stop test database
-        if: failure()
+        if: always()
         run: echo "Stopping test database"
