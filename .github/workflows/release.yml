@@ -1,0 +1,20 @@
+name: fan in and out checks
+
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Linting code"
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Running unit tests"
+
+  package:
+    runs-on: ubuntu-latest
+    needs: [lint, unit-tests]
+    steps:
+      - run: echo "Packaging application"
