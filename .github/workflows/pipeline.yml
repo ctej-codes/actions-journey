@@ -1,4 +1,5 @@
 name: pipeline
+<<<<<<< HEAD
 
 on:
   push:
@@ -26,3 +27,9 @@ jobs:
     steps:
       - name: Deploy
         run: echo "Deploying ${{ needs.build.outputs.version }}"
+=======
+on: push
+jobs:
+  checks:
+    uses: ./.github/workflows/checks.yml
+>>>>>>> 18590fa (reusable workflow)
